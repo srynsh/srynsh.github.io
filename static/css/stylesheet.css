@@ -621,6 +621,13 @@ body.dark-mode .section-note {
   text-transform: uppercase;
   font-weight: 600;
   object-fit: cover;
+  width: 160px;
+  max-width: 160px;
+}
+
+img.paper-img {
+  height: auto;
+  object-fit: contain;
 }
 
 .paper-content {
