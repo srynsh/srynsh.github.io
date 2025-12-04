@@ -1,557 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suryaansh Jain</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        --bg: #f8f9fb;
-        --card: #ffffff;
-        --accent: #7a1c1c;
-        --muted: #5e6572;
-        --border: #e3e8f0;
-        --shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
-      }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #101116;
-          --card: #181a20;
-          --accent: #c95b5b;
-          --muted: #c5cad6;
-          --border: #272934;
-          --shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-        }
-      }
+<head>
+  <meta charset="UTF-8" />
+  <base target="_blank" />
+  <title>Suryaansh Jain</title>
+  <meta name="author" content="Suryaansh Jain" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="img.jpg" type="image/jpeg" />
+  <link rel="stylesheet" type="text/css" href="static/css/stylesheet.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
 
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        margin: 0;
-        background: var(--bg);
-        color: #0f172a;
-        color: rgb(15 23 42 / 0.92);
-        padding: 0 1.5rem 4rem;
-      }
-
-      main,
-      header {
-        margin: 0 auto;
-        max-width: 1000px;
-      }
-
-      header {
-        padding: 4rem 0 2rem;
-      }
-
-      .eyebrow {
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        color: var(--muted);
-        margin-bottom: 0.7rem;
-      }
-
-      h1 {
-        font-size: clamp(2.5rem, 4vw, 3.5rem);
-        margin: 0;
-      }
-
-      .lead {
-        font-size: 1.2rem;
-        max-width: 700px;
-        color: var(--muted);
-        line-height: 1.7;
-        margin: 1rem 0 1.5rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .btn {
-        border-radius: 999px;
-        padding: 0.65rem 1.4rem;
-        font-weight: 600;
-        border: 1px solid transparent;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-      }
-
-      .btn.primary {
-        background: var(--accent);
-        color: #fff;
-        box-shadow: var(--shadow);
-      }
-
-      .btn.secondary {
-        border-color: var(--border);
-        color: inherit;
-        background: var(--card);
-      }
-
-      .quick-stats {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1rem;
-        padding: 0;
-        margin: 2rem 0 0;
-      }
-
-      .quick-stats li {
-        padding: 1.25rem;
-        border-radius: 18px;
-        background: var(--card);
-        border: 1px solid var(--border);
-        box-shadow: var(--shadow);
-      }
-
-      .quick-stats strong {
-        display: block;
-        font-size: 1.4rem;
-        margin-bottom: 0.25rem;
-      }
-
-      section {
-        margin-top: 3.5rem;
-      }
-
-      h2 {
-        margin-bottom: 1.25rem;
-        font-size: 1.5rem;
-      }
-
-      .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.25rem;
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 1.75rem;
-        box-shadow: var(--shadow);
-      }
-
-      .card h3 {
-        margin-top: 0;
-        margin-bottom: 0.3rem;
-      }
-
-      .card .meta {
-        font-size: 0.95rem;
-        color: var(--muted);
-        margin-bottom: 0.8rem;
-      }
-
-      .card ul {
-        padding-left: 1.1rem;
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-size: 0.85rem;
-        background: rgba(122, 28, 28, 0.1);
-        color: var(--accent);
-        padding: 0.15rem 0.8rem;
-        border-radius: 999px;
-        font-weight: 600;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        overflow: hidden;
-        background: var(--card);
-        box-shadow: var(--shadow);
-      }
-
-      th,
-      td {
-        padding: 0.85rem 1rem;
-        text-align: left;
-        border-bottom: 1px solid var(--border);
-      }
-
-      tr:last-child td {
-        border-bottom: none;
-      }
-
-      .list-columns {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1rem;
-      }
-
-      .list-columns ul {
-        list-style: none;
-        background: var(--card);
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        padding: 1.3rem 1.5rem;
-        box-shadow: var(--shadow);
-        margin: 0;
-      }
-
-      .list-columns li + li {
-        margin-top: 0.6rem;
-      }
-
-      footer {
-        margin-top: 4rem;
-        padding: 2rem 0 0;
-        font-size: 0.9rem;
-        color: var(--muted);
-        text-align: center;
-      }
-
-      @media (max-width: 640px) {
-        header {
-          padding-top: 2.5rem;
-        }
-
-        .card,
-        .quick-stats li,
-        table,
-        .list-columns ul {
-          padding: 1.25rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <p class="eyebrow">MS Student · UMass Amherst</p>
-      <h1>Suryaansh Jain</h1>
-      <p class="lead">
-        I build reliable learning systems and theoretical tools that bridge reinforcement learning,
-        representation learning, and graph algorithms. Currently pursuing an M.S. in Computer Science at
-        the University of Massachusetts Amherst after graduating from Indian Institute of Technology, Hyderabad (IITH).
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="mailto:suryaanshjai@umass.edu">Email Me</a>
-        <a class="btn secondary" href="https://scholar.google.com/citations?user=MkeAuCYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        <a class="btn secondary" href="#research">Research Highlights</a>
+<body>
+  <div class="content-wrapper">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#about" class="nav-logo" target="_self">Suryaansh Jain</a>
+        <div class="nav-empty-div"></div>
+        <ul class="nav-links">
+          <li><a href="#about" target="_self">About</a></li>
+          <li><a href="#education" target="_self">Education</a></li>
+          <li><a href="#research" target="_self">Research</a></li>
+          <li><a href="#experience" target="_self">Experience</a></li>
+          <li>
+            <button class="color-mode-toggle" aria-label="Toggle color mode" title="Toggle color mode">
+              <div class="sun"></div>
+              <div class="moon"></div>
+            </button>
+          </li>
+        </ul>
+        <div class="nav-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </div>
-      <ul class="quick-stats">
-        <li>
-          <strong>2027</strong>
-          Expected M.S. graduation · University of Massachusetts Amherst
-        </li>
-        <li>
-          <strong>9.41/10</strong>
-          B.Tech Computer Science · IIT Hyderabad (2025)
-        </li>
-        <li>
-          <strong>2 ×</strong>
-          KVPY Fellow · OnePlus-Oppo Genius+ Scholar (Top 6 nationwide)
-        </li>
-      </ul>
-    </header>
+    </nav>
 
-    <main>
-      <section id="education">
-        <h2>Education</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Level</th>
-              <th>Degree</th>
-              <th>Institution</th>
-              <th>Year</th>
-              <th>GPA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Graduate</td>
-              <td>M.S. Computer Science</td>
-              <td>University of Massachusetts Amherst</td>
-              <td>2027 (expected)</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>Undergraduate</td>
-              <td>B.Tech Computer Science &amp; Engineering</td>
-              <td>Indian Institute of Technology Hyderabad</td>
-              <td>2025</td>
-              <td>3.91/4 · 9.41/10</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+    <table
+      style="width: 100%; max-width: 1100px; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto"
+      id="about">
+      <tbody>
+        <tr>
+          <td>
+            <table style="width: 100%; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto">
+              <tbody>
+                <tr>
+                  <td style="padding: 2.5%; width: 63%; vertical-align: middle">
+                    <p class="name">Suryaansh Jain</p>
+                    <p>
+                      I'm a first year Master's student at the University of Massachusetts Amherst focused on
+                      reinforcement learning. I am currently working under <a
+                        href="https://people.cs.umass.edu/~bsilva/">Prof. Bruno Castro da Silva</a> and <a
+                        href="https://people.cs.umass.edu/~pthomas/">Prof. Philip Thomas</a>.
+                    </p>
+                    <p>
+                      Previously, I finished my Bachelor's in Computer Science at at IIT Hyderabad. In the past I have
+                      been fortunate to work with <a href="https://people.iith.ac.in/subruk/">Prof. Subrahmanyam
+                        Kalyanasundaram</a> and <a href="https://people.iith.ac.in/kotaro/">Prof. Kotaro Kataoka</a> at
+                      <a href="https://cse.iith.ac.in/">IIT Hyderabad</a>, <a
+                        href="https://www.comp.nus.edu.sg/~bleong/">Prof. Ben Leong</a> at <a
+                        href="https://www.comp.nus.edu.sg/">NUS</a> and <a
+                        href="https://www.cse.iitk.ac.in/users/nitin/">Prof. Nitin Saxena</a> at <a
+                        href="https://www.cse.iitk.ac.in/">IIT Kanpur</a>.
+                    </p>
+                    <p style="text-align: center">
+                      <a href="#" onclick="sendEmail()" target="_self"><i class="fas fa-envelope big-icon"></i></a>
+                      <span class="big-icon">&nbsp;&nbsp;</span>
+                      <a href="suryaansh_resume_2025.pdf"><i class="ai ai-cv big-icon"></i></a>
+                      <span class="big-icon">&nbsp;&nbsp;</span>
+                      <a href="https://scholar.google.com/citations?user=MkeAuCYAAAAJ&hl=en"><i
+                          class="ai ai-google-scholar big-icon"></i></a>
+                      <span class="big-icon">&nbsp;&nbsp;</span>
+                      <a href="https://github.com/srynsh"><i class="fab fa-github big-icon"></i></a>
+                      <span class="big-icon">&nbsp;&nbsp;</span>
+                      <a href="https://www.linkedin.com/in/suryaanshjain/"><i
+                          class="fab fa-linkedin-in big-icon"></i></a>
+                    </p>
+                  </td>
+                  <td style="padding: 2.5%; width: 37%; max-width: 37%">
+                    <img src="img.jpg" alt="Suryaansh Jain"
+                      style="width: 100%; max-width: 100%; object-fit: cover; border-radius: 50%" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <section id="research">
-        <div class="pill">Research Experience</div>
-        <h2>Learning, Optimization &amp; Algorithms</h2>
-        <div class="cards-grid">
-          <article class="card">
-            <h3>State Abstraction for STAR</h3>
-            <p class="meta">UMass Amherst · Advisor: Dr. Bruno Castro Da Silva · 2025</p>
-            <ul>
-              <li>Learning \(\phi\)-functions yielding reduced spaces that remain \(c\)-order Markov.</li>
-              <li>Derived theoretical guarantees and trained autoencoders to discover admissible abstractions.</li>
-              <li>Applying learned abstractions for efficient, accurate off-policy evaluation. Targeting ICML 2026.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Beyond Consensus: Mitigating Agreeableness Bias</h3>
-            <p class="meta">National University of Singapore · Advisor: Dr. Ben Leong · 2024–2025</p>
-            <ul>
-              <li>Extended LLM-judge pipelines on subjective tasks using statistical modeling.</li>
-              <li>Proposed an IRT-inspired method with latent variables to score model precision.</li>
-              <li>First-author submission to ICLR 2026.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>k-Component Connectivity Bounds</h3>
-            <p class="meta">IIT Hyderabad · Advisor: Dr. Subrahmanyam Kalyanasundaram · 2023–2024</p>
-            <ul>
-              <li>Bounded cop numbers of graphs through refined cover-size arguments.</li>
-              <li>Improved guarantees when external components stay below size \(k\).</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>FPT Algorithms for Graph Clustering</h3>
-            <p class="meta">IIT Hyderabad · 2023–2024</p>
-            <ul>
-              <li>Audited hypercube-based analyses of Independent Set formulations; discovered proof errors now fixed in print.</li>
-              <li>Extended techniques to non-binary string families.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Approximate Algorithms for p-String Problems</h3>
-            <p class="meta">IIT Kanpur · Advisor: Dr. Nitin Saxena · 2024</p>
-            <ul>
-              <li>Adapted closest-string approximations to general \(p\)-string variants.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Inter-Blockchain Communication</h3>
-            <p class="meta">Toyota-funded · Advisor: Dr. Kotaro Kataoka · 2023</p>
-            <ul>
-              <li>Linked private &amp; public chains via OTEx to track NFT and asset ownership.</li>
-              <li>Co-authored “OTEx: Ownership Transfer and Execution Protocol for Blockchain Interoperability.”</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+    <div class="section-container">
 
-      <section id="projects">
-        <div class="pill">Academic Projects</div>
-        <h2>Applied Research &amp; Course Projects</h2>
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Robust Object Detection</h3>
-            <p class="meta">Computer Vision · 2025</p>
-            <ul>
-              <li>Benchmarked patch, gradient, and novel Edge-DP attacks on YOLO &amp; Faster R-CNN.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Graph Coloring with GNNs &amp; Diffusion</h3>
-            <p class="meta">Advanced Topics in DL · 2024</p>
-            <ul>
-              <li>Engineered diffusion and GNN hybrids that color 4-colorable graphs with 90%+ accuracy; extended to \(k\)-colorable cases.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Generative Recommender Systems</h3>
-            <p class="meta">Deep Learning · 2024</p>
-            <ul>
-              <li>Surveyed DiffRec, Diff4Rec, CVAE-based recommenders; proposed improvements for sequence modeling.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>RISC-V Disassembler</h3>
-            <p class="meta">Computer Architecture · 2022</p>
-            <ul>
-              <li>Built a C++ disassembler translating binary/hex machine code to RISC-V instructions.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Image Manipulation DSL</h3>
-            <p class="meta">Compilers II · 2023</p>
-            <ul>
-              <li>Designed a DSL supporting BMP drawing primitives and convolution pipelines.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Paxos &amp; Chubby Implementations</h3>
-            <p class="meta">Computer Networks · 2023</p>
-            <ul>
-              <li>Implemented Paxos and Chubby per seminal papers to study distributed coordination.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Stack Overflow Clone Backend</h3>
-            <p class="meta">Database Systems · 2023</p>
-            <ul>
-              <li>Developed Node.js + PostgreSQL backend scaling to archive-sized datasets.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Firewall &amp; Bandwidth Limiter</h3>
-            <p class="meta">Networking Club · 2023</p>
-            <ul>
-              <li>Controlled router traffic via NFQUEUE-driven C++ firewall with quota enforcement.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Wordle on Aptos Blockchain</h3>
-            <p class="meta">Inter-IIT Tech Meet · 2023</p>
-            <ul>
-              <li>Deployed Move smart contracts with custom compression to minimize on-chain storage.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Drone Motor Failure Detection</h3>
-            <p class="meta">Inter-IIT Tech Meet · 2024</p>
-            <ul>
-              <li>Trained RNNs on sensor streams and ported inference to PX4-compatible C++.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+      <table style="width: 100%; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto"
+        id="education">
+        <tbody>
+          <tr>
+            <td style="padding: 16px 20px; width: 100%; vertical-align: middle">
+              <div class="section-heading">
+                <a href="#education" class="link-icon" target="_self" onclick="copyLink(event, 'education')"><i
+                    class="fas fa-link"></i></a>
+                <h2>Education</h2>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-      <section id="internships">
-        <div class="pill">Internships</div>
-        <h2>Industry Experience</h2>
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Bryt</h3>
-            <p class="meta">ML &amp; Software Engineer · 10 weeks · 2025</p>
-            <ul>
-              <li>Shipped section-name aliasing and an LLM-powered support assistant touching 100+ code files.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Crow Canyon Systems</h3>
-            <p class="meta">ML &amp; Software Engineer · 4 weeks · 2023</p>
-            <ul>
-              <li>Built RAG pipelines with LangChain, LangGraph, and custom orchestration for PDF knowledge bases.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+      <table style="width: 100%; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto">
+        <tbody>
+          <tr>
+            <td style="padding: 0 20px; width: 100%; vertical-align: middle">
+              <div class="education-item">
+                <i class="fas fa-graduation-cap bullet-icon"></i>
+                <div class="education-info">
+                  <p>
+                    <strong>M.S. Computer Science, 2027 (expected)</strong><br />
+                    <a href="https://www.cics.umass.edu/">University of Massachusetts Amherst</a>
+                  </p>
+                </div>
+              </div>
+              <div class="education-item">
+                <i class="fas fa-graduation-cap bullet-icon"></i>
+                <div class="education-info">
+                  <p>
+                    <strong>Bachelor's in Computer Science, 2025</strong><br />
+                    <a href="https://www.iith.ac.in/">Indian Institute of Technology Hyderabad</a>
+                  </p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-      <section id="skills">
-        <div class="pill">Technical Skills</div>
-        <h2>Tools &amp; Languages</h2>
-        <div class="list-columns">
-          <ul>
-            <li><strong>Programming:</strong> C++, C, Python, Java, Bash, Sed, Awk, Solidity, Move, Rust, Dart, ROS</li>
-            <li><strong>Web:</strong> JavaScript, Flutter, Express, Bootstrap, aiosql, Django, FastAPI, sockets</li>
-            <li><strong>Libraries:</strong> NumPy, Matplotlib, PyTorch, Pandas, TensorFlow, SpaCy, NLTK, SciPy, scikit-learn, OpenAI, Streamlit, OpenCV, CUDA, Docker, OpenGL, CLIP, Diffusers, LangChain, LangGraph</li>
-          </ul>
-        </div>
-      </section>
+      <table style="width: 100%; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto" id="research">
+        <tbody>
+          <tr>
+            <td style="padding: 16px 20px; width: 100%; vertical-align: middle">
+              <div class="section-heading">
+                <a href="#research" class="link-icon" target="_self" onclick="copyLink(event, 'research')"><i
+                    class="fas fa-link"></i></a>
+                <h2>Research</h2>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 20px">
+              <div class="list-section">
+                <!-- <div class="paper-item">
+                  <div class="paper-img"
+                    style="background: linear-gradient(135deg, rgba(23, 114, 208, 0.15), rgba(0, 0, 0, 0.05)); color: #1f3b57;">
+                    RL</div>
+                  <div class="paper-content">
+                    <a href="#" class="paper-title">State Abstraction for STAR</a>
+                    <div class="paper-authors">Suryaansh Jain, et al.</div>
+                    <div class="paper-venue">Work in Progress</div>
+                    <p class="paper-abstract">Designing φ-functions that keep compressed state spaces
+                      c<sup>th</sup>-order Markov for reliable off-policy evaluation. Deriving structural constraints
+                      and training autoencoders that satisfy abstraction requirements.</p>
+                  </div>
+                </div> -->
 
-      <section id="courses">
-        <div class="pill">Coursework</div>
-        <h2>Selected Courses</h2>
-        <div class="list-columns">
-          <ul>
-            <li>Theory of Computation</li>
-            <li>Discrete Math</li>
-            <li>Foundations of Machine Learning</li>
-            <li>Compilers</li>
-            <li>Database Systems</li>
-            <li>Computer Networks</li>
-            <li>Operating Systems</li>
-            <li>Computer Architecture</li>
-            <li>Linear Optimization</li>
-            <li>Game Theory &amp; Mechanism Design</li>
-            <li>Deep Learning</li>
-            <li>Spectral Graph Theory</li>
-            <li>Convex Optimization</li>
-            <li>Reinforcement Learning</li>
-            <li>Cryptology</li>
-            <li>Quantum Computing</li>
-            <li>Advanced Topics in DL</li>
-            <li>Computer Vision</li>
-            <li>Communication Complexity</li>
-            <li>Approximate Algorithms</li>
-            <li>Topics in Combinatorics</li>
-            <li>Calculus, Linear Algebra, Probability &amp; Statistics</li>
-          </ul>
-          <ul>
-            <li>Information Theory</li>
-            <li>Transform Techniques</li>
-            <li>Advanced Topics in ML (Graduate)</li>
-            <li>Reinforcement Learning (Graduate)</li>
-            <li>Complexity Theory (Graduate)</li>
-          </ul>
-        </div>
-      </section>
+                <div class="paper-item">
+                  <img src="images/llm.png" alt="Beyond Consensus" class="paper-img" />
+                  <div class="paper-content">
+                    <a href="https://arxiv.org/abs/2510.11822" class="paper-title">Beyond Consensus: Mitigating the
+                      Agreeableness Bias in LLM Judge Evaluations</a>
+                    <div class="paper-authors">Suryaansh Jain, <a
+                        href="https://scholar.google.com/citations?user=V2Nsf8IAAAAJ&hl=en">Umair Z Ahmed</a>, <a
+                        href="http://shubhamsahai.in/">Shubham Sahai</a>, <a
+                        href="https://www.comp.nus.edu.sg/~bleong/">Ben Leong</a></div>
+                    <div class="paper-venue">arXiv, 2025</div>
+                    <div class="paper-buttons">
+                      <a href="https://arxiv.org/abs/2510.11822" class="paper-button">arXiv</a>
+                      <a href="https://github.com/ai-cet/paper-arxiv-llm-judge-calibration"
+                        class="paper-button">code</a>
+                    </div>
+                    <p class="paper-abstract">New Large Language Models (LLMs) become available every few weeks, and
+                      modern application developers confronted with the unenviable task of having to decide if they
+                      should switch to a new model. While human evaluation remains the gold standard, it is costly and
+                      unscalable. The state-of-the-art approach is to use LLMs as evaluators ( LLM-as-a-judge), but this
+                      suffers from a critical flaw: LLMs exhibit a strong positive bias. We provide empirical evidence
+                      showing that while LLMs can identify valid outputs with high accuracy (i.e., True Positive Rate
+                      96%), they are remarkably poor at identifying invalid ones (i.e., True Negative Rate < 25%). This
+                        systematic bias, coupled with class imbalance, often leads to inflated reliability scores. While
+                        ensemble-based methods like majority voting can help, we show that they are not good enough. We
+                        introduce an optimal minority-veto strategy that is resilient to missing data and mitigates this
+                        bias to a large extent. For scenarios requiring even higher precision, we propose a novel
+                        regression-based framework that directly models the validator bias using a small set of
+                        human-annotated ground truth data. On a challenging code feedback task over 366 high-school
+                        Python programs, our regression approach reduces the maximum absolute error to just 1.2%,
+                        achieving a 2x improvement over the best-performing ensemble of 14 state-of-the-art LLMs.</p>
+                  </div>
+                </div>
 
-      <section id="achievements">
-        <div class="pill">Honors</div>
-        <h2>Scholastic Achievements</h2>
-        <div class="list-columns">
-          <ul>
-            <li>OnePlus-Oppo Genius+ Scholar (Top 6 nationally) · 2022</li>
-            <li>JEE Advanced All India Rank 311 (out of 155k) · 2021</li>
-            <li>JEE Main All India Rank 458 (out of 1M) · 2021</li>
-            <li>Dual KVPY Fellowship awardee · 2019 &amp; 2020</li>
-          </ul>
-        </div>
-      </section>
+                <div class="paper-item">
+                  <div class="paper-img"
+                    style="background: linear-gradient(135deg, rgba(23, 114, 208, 0.15), rgba(0, 0, 0, 0.05)); color: #1f3b57;">
+                    GRAPH</div>
+                  <div class="paper-content">
+                    <a href="https://arxiv.org/abs/2407.10699" class="paper-title">From Data Completion to Problems on
+                      Hypercubes: A Parameterized Analysis of the Independent Set Problem</a>
+                    <div class="paper-authors"><a
+                        href="https://pure.royalholloway.ac.uk/en/persons/eduard-eiben/">Eduard Eiben</a>, <a
+                        href="https://www.ac.tuwien.ac.at/people/rganian/">Robert Ganian</a>, <a
+                        href="https://www.cdm.depaul.edu/Faculty-and-Staff/pages/faculty-info.aspx?fid=272">Iyad
+                        Kanj</a>, <a href="https://eps.leeds.ac.uk/computing/staff/8786/dr-sebastian-ordyniak">Sebastian
+                        Ordyniak</a>, <a href="https://www.ac.tuwien.ac.at/people/szeider/">Stefan Szeider</a></div>
+                    <div class="paper-venue">arXiv, 2024</div>
+                    <div class="paper-buttons">
+                      <a href="https://arxiv.org/abs/2407.10699" class="paper-button">arXiv</a>
+                    </div>
+                    <p class="paper-abstract">Several works have recently investigated the parameterized complexity of
+                      data completion problems, motivated by their applications in machine learning, and clustering in
+                      particular. Interestingly, these problems can be equivalently formulated as classical graph
+                      problems on induced subgraphs of powers of partially-defined hypercubes.
+                      In this paper, we follow up on this recent direction by investigating the Independent Set problem
+                      on this graph class, which has been studied in the data science setting under the name Diversity.
+                      We obtain a comprehensive picture of the problem's parameterized complexity and establish its
+                      fixed-parameter tractability w.r.t. the solution size plus the power of the hypercube.
+                      Given that several such FO-definable problems have been shown to be fixed-parameter tractable on
+                      the considered graph class, one may ask whether fixed-parameter tractability could be extended to
+                      capture all FO-definable problems. We answer this question in the negative by showing that FO
+                      model checking on induced subgraphs of hypercubes is as difficult as FO model checking on general
+                      graphs.
+                    </p>
+                  </div>
+                </div>
 
-      <section id="olympiads">
-        <div class="pill">Olympiads</div>
-        <h2>Competitive Highlights</h2>
-        <div class="list-columns">
-          <ul>
-            <li>Top 60 Orientation Camp select for IChO · AIR 27 · 2021</li>
-            <li>State topper · National Science Examination in Physics · 2021</li>
-            <li>Top 300 qualifier for InPhO (IPhO) · 2020</li>
-          </ul>
-        </div>
-      </section>
+                <div class="paper-item">
+                  <img src="images/cnr.png" alt="Cops and Robber" class="paper-img" />
+                  <div class="paper-content">
+                    <a href="https://arxiv.org/abs/2412.02511" class="paper-title">A bound for the cops and robber
+                      problem in terms of 2-component order connectivity</a>
+                    <div class="paper-authors">Suryaansh Jain, <a href="https://people.iith.ac.in/subruk/">Subrahmanyam
+                        Kalyanasundaram</a>, Kartheek Sriram Tammana</div>
+                    <div class="paper-venue">arXiv, 2024</div>
+                    <div class="paper-buttons">
+                      <a href="https://arxiv.org/abs/2412.02511" class="paper-button">arXiv</a>
+                    </div>
+                    <p class="paper-abstract">In the cops and robber game, there are multiple cops and a single robber
+                      taking turns moving along the edges of a graph. The goal of the cops is to capture the robber
+                      (move to the same vertex as the robber) and the goal of the robber is to avoid capture. The cop
+                      number of a given graph is the smallest number of cops required to ensure the capture of the
+                      robber. The k-component order connectivity of a graph G = (V, E) is the size of a smallest set U,
+                      such that all the connected components of the induced graph on V \ U are of size at most k. In
+                      this brief note, we provide a bound on the cop number of graphs in terms of their 2-component
+                      order connectivity.</p>
+                  </div>
+                </div>
 
-      <section id="extracurriculars">
-        <div class="pill">Leadership &amp; Service</div>
-        <h2>Extracurriculars</h2>
-        <div class="list-columns">
-          <ul>
-            <li>Teaching Assistant · Information Theory, Theory of Computation (2024–2025)</li>
-            <li>Represented IIT Hyderabad at Inter-IIT Tech Meet (Bombay 2024, Madras 2023)</li>
-            <li>Head of Web Development, Milan Fest · 2024</li>
-            <li>Math Bowl (CMI) · 3rd Place · 2024</li>
-            <li>Gold · Milan Robotics &amp; Web Dev Contests · 2023</li>
-            <li>Bronze · Milan Web Dev Contest · 2022</li>
-            <li>Member · Software Development Club (Lambda) &amp; Networking Club (Kludge)</li>
-          </ul>
-        </div>
-      </section>
-    </main>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <footer>
-      © <span id="year"></span> Suryaansh Jain · suryaanshjai@umass.edu · suryaansh2003@gmail.com · <a href="https://github.com/srynsh">@srynsh</a>
-    </footer>
+      <table style="width: 100%; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto"
+        id="experience">
+        <tbody>
+          <tr>
+            <td style="padding: 16px 20px; width: 100%; vertical-align: middle">
+              <div class="section-heading">
+                <a href="#experience" class="link-icon" target="_self" onclick="copyLink(event, 'experience')"><i
+                    class="fas fa-link"></i></a>
+                <h2>Industry Experience</h2>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 20px">
+              <div class="list-section">
+                <article class="list-item">
+                  <div class="list-media">ML</div>
+                  <div class="list-body">
+                    <h3>ML &amp; Software Engineer Intern</h3>
+                    <p class="list-meta">Bryt Schools · Jun 2025 – Aug 2025 · Hyderabad, India</p>
+                    <ul>
+                      <li>Built an LLM-powered chatbot to resolve student queries across multi-turn conversations.</li>
+                      <li>Implemented section-name aliasing across 100+ files and coordinated staged production
+                        rollouts.</li>
+                      <li>Integrated fine-tuning and evaluation workflows into the production ML stack.</li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="list-item">
+                  <div class="list-media">RAG</div>
+                  <div class="list-body">
+                    <h3>ML Engineer Intern</h3>
+                    <p class="list-meta">Crow Canyon Software · Dec 2023 – Jan 2024 · Hyderabad, India</p>
+                    <ul>
+                      <li>Shipped a Retrieval-Augmented Generation workflow for querying large PDF repositories.</li>
+                      <li>Designed ingestion, preprocessing, and embedding pipelines with LangChain, LangGraph, and
+                        custom glue.</li>
+                      <li>Embedded the RAG assistant into customer-facing applications.</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+    </div>
+
+  </div>
+  <script src="static/js/scripts.js"></script>
+</body>
+
 </html>
