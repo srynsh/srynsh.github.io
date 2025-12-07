@@ -82,11 +82,13 @@ p {
 }
 
 @keyframes twinkle {
+
   0%,
   100% {
     opacity: 0.2;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.4);
@@ -420,7 +422,7 @@ h1 {
 }
 
 .section-heading {
-  margin-bottom: 28px;
+  margin-bottom: 40px;
 }
 
 .section-heading h2 {
@@ -450,7 +452,7 @@ h1 {
   padding: 0;
 }
 
-.experience-card + .experience-card {
+.experience-card+.experience-card {
   margin-top: 18px;
 }
 
@@ -465,7 +467,7 @@ h1 {
   padding-left: 1.1rem;
 }
 
-.experience-card li + li {
+.experience-card li+li {
   margin-top: 0.35rem;
 }
 
