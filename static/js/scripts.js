@@ -40,8 +40,8 @@ if (navToggle && navLinks) {
 }
 
 function sendEmail() {
-  const email = "suryaanshjai@umass.edu";
-  window.location.href = `mailto:${email}`;
+  const recipients = ["suryaanshjai@umass.edu", "suryaansh2003@gmail.com"];
+  window.location.href = `mailto:${recipients.join(",")}`;
 }
 
 window.sendEmail = sendEmail;
