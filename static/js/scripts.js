@@ -39,6 +39,17 @@ if (navToggle && navLinks) {
   });
 }
 
+const navbarEl = document.querySelector(".navbar");
+
+if (navbarEl) {
+  const updateNavbarScrollState = () => {
+    navbarEl.classList.toggle("scrolled", window.scrollY > 80);
+  };
+
+  window.addEventListener("scroll", updateNavbarScrollState, { passive: true });
+  updateNavbarScrollState();
+}
+
 function sendEmail() {
   const recipients = ["suryaanshjai@umass.edu", "suryaansh2003@gmail.com"];
   window.location.href = `mailto:${recipients.join(",")}`;
