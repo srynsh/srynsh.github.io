@@ -6,14 +6,11 @@ const navLinks = document.querySelector(".nav-links");
 if (colorModeToggle) {
   const sun = colorModeToggle.querySelector(".sun");
   const moon = colorModeToggle.querySelector(".moon");
-  const storedMode = localStorage.getItem("darkMode");
 
-  if (storedMode === "enabled") {
-    body.classList.add("dark-mode");
+  if (body.classList.contains("dark-mode")) {
     sun?.classList.remove("visible");
     moon?.classList.add("visible");
   } else {
-    body.classList.remove("dark-mode");
     sun?.classList.add("visible");
     moon?.classList.remove("visible");
   }
@@ -33,9 +30,15 @@ if (colorModeToggle) {
 }
 
 if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    navToggle.classList.toggle("open");
-    navLinks.classList.toggle("show");
+  const setMenuOpen = (open) => {
+    navToggle.classList.toggle("open", open);
+    navLinks.classList.toggle("show", open);
+    navToggle.setAttribute("aria-expanded", open);
+  };
+
+  navToggle.addEventListener("click", () => setMenuOpen(!navLinks.classList.contains("show")));
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
   });
 }
 
@@ -164,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const headings = document.querySelectorAll(".section-heading h2");
   headings.forEach((heading) => {
     heading.addEventListener("click", (event) => {
-      const sectionId = heading.parentElement.id;
+      const sectionId = heading.closest("[id]").id;
       copyLink(event, sectionId);
     });
   });

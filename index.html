@@ -6,16 +6,29 @@
   <base target="_blank" />
   <title>Suryaansh Jain</title>
   <meta name="author" content="Suryaansh Jain" />
+  <meta name="description"
+    content="Suryaansh Jain is a Master's student in Computer Science at UMass Amherst working on reinforcement learning and computer vision." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="img.jpg" type="image/jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://srynsh.github.io/" />
+  <meta property="og:title" content="Suryaansh Jain" />
+  <meta property="og:description"
+    content="Suryaansh Jain is a Master's student in Computer Science at UMass Amherst working on reinforcement learning and computer vision." />
+  <meta property="og:image" content="https://srynsh.github.io/images/suryaansh_pfp.jpg" />
+  <link rel="shortcut icon" href="images/suryaansh_pfp.jpg" type="image/jpeg" />
   <link rel="stylesheet" type="text/css" href="static/css/stylesheet.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" />
 </head>
 
 <body>
+  <script>
+    // Runs before the page paints so dark-mode visitors don't see a light flash.
+    if (localStorage.getItem("darkMode") === "enabled" ||
+      (!localStorage.getItem("darkMode") && matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.body.classList.add("dark-mode");
+    }
+  </script>
   <div class="content-wrapper">
     <nav class="navbar">
       <div class="nav-container">
@@ -33,11 +46,11 @@
             </button>
           </li>
         </ul>
-        <div class="nav-toggle">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </nav>
 
@@ -51,15 +64,15 @@
               <tbody>
                 <tr>
                   <td style="padding: 2.5%; width: 63%; vertical-align: middle">
-                    <p class="name">Suryaansh Jain</p>
+                    <h1 class="name">Suryaansh Jain</h1>
                     <p>
-                      I'm a first year Master's student at the University of Massachusetts Amherst focused on
+                      I'm a Master's student at the University of Massachusetts Amherst focused on
                       reinforcement learning and Computer Vision. I am currently working under <a
                         href="https://hcr.cs.umass.edu/people/hzhang/">Prof. Hao Zhang</a> and <a
                         href="https://people.cs.umass.edu/~pthomas/">Prof. Philip Thomas</a>.
                     </p>
                     <p>
-                      Previously, I finished my Bachelor's in Computer Science at at IIT Hyderabad. In the past I have
+                      Previously, I finished my Bachelor's in Computer Science at IIT Hyderabad. In the past I have
                       been fortunate to work with <a href="https://people.iith.ac.in/subruk/">Prof. Subrahmanyam
                         Kalyanasundaram</a> and <a href="https://people.iith.ac.in/kotaro/">Prof. Kotaro Kataoka</a> at
                       <a href="https://cse.iith.ac.in/">IIT Hyderabad</a>, <a
@@ -69,16 +82,17 @@
                         href="https://www.cse.iitk.ac.in/">IIT Kanpur</a>.
                     </p>
                     <p style="text-align: center">
-                      <a href="#" onclick="sendEmail()" target="_self"><i class="fas fa-envelope big-icon"></i></a>
+                      <a href="#" onclick="sendEmail()" target="_self" aria-label="Email"><i
+                          class="fas fa-envelope big-icon"></i></a>
                       <span class="big-icon">&nbsp;&nbsp;</span>
-                      <a href="Suryaansh_Resume_2026.pdf"><i class="ai ai-cv big-icon"></i></a>
+                      <a href="suryaansh_resume_2026.pdf" aria-label="CV"><i class="ai ai-cv big-icon"></i></a>
                       <span class="big-icon">&nbsp;&nbsp;</span>
-                      <a href="https://scholar.google.com/citations?user=MkeAuCYAAAAJ&hl=en"><i
+                      <a href="https://scholar.google.com/citations?user=MkeAuCYAAAAJ&hl=en" aria-label="Google Scholar"><i
                           class="ai ai-google-scholar big-icon"></i></a>
                       <span class="big-icon">&nbsp;&nbsp;</span>
-                      <a href="https://github.com/srynsh"><i class="fab fa-github big-icon"></i></a>
+                      <a href="https://github.com/srynsh" aria-label="GitHub"><i class="fab fa-github big-icon"></i></a>
                       <span class="big-icon">&nbsp;&nbsp;</span>
-                      <a href="https://www.linkedin.com/in/suryaanshjain/"><i
+                      <a href="https://www.linkedin.com/in/suryaanshjain/" aria-label="LinkedIn"><i
                           class="fab fa-linkedin-in big-icon"></i></a>
                     </p>
                   </td>
@@ -153,21 +167,27 @@
             <td style="padding: 0 20px">
               <div class="list-section">
                 <div class="paper-item">
-                  <img src="images/VLA_Simloss.png" alt="SimLoss VLA captioning" class="paper-img" />
+                  <img src="images/VLA_Simloss.png" alt="SimLoss image captioning" class="paper-img" />
                   <div class="paper-content">
-                    <a href="https://srynsh.github.io/SimLoss-Image-Captioning/" class="paper-title">Zero-shot
-                      Fine-grained Image Captioning with VLAs</a>
+                    <a href="https://srynsh.github.io/SimLoss-Image-Captioning/" class="paper-title">A Glance Is All
+                      You Need: Single-Pass Fine-Grained Image Captioning with SimLoss</a>
                     <div class="paper-authors"><strong>Suryaansh Jain</strong>, Rahasya Barkur, Vishal G, Ryan Rossi,
-                      Franck Dernoncourt, Jack Wang, Koustava Goswami, Nedim Lipka, Puneet Mathur, Seunghyun Yoon</div>
+                      Franck Dernoncourt, Jack Wang, Koustava Goswami, Nedim Lipka, Puneet Mathur, Samyadeep Basu,
+                      Seunghyun Yoon</div>
                     <!-- <div class="paper-venue">Under submission to AAAI 2027</div> -->
                     <div class="paper-buttons">
                       <a href="https://srynsh.github.io/SimLoss-Image-Captioning/" class="paper-button">website</a>
                       <a href="https://arxiv.org/abs/2609.00591" class="paper-button">arXiv</a>
                       <a href="https://github.com/srynsh/SimLoss-Image-Captioning" class="paper-button">code</a>
                     </div>
-                    <p class="paper-abstract">A zero-shot approach to fine-grained image captioning built on
-                      vision-language-action (VLA) models, producing detailed, object-level descriptions in a single
-                      pass while matching the quality of multi-pass pipelines at a fraction of their cost and latency.</p>
+                    <details class="paper-details">
+                      <summary>Abstract</summary>
+                      <p class="paper-abstract">Introduces SimLoss, a reference-free objective that trains
+                        vision-language models for single-pass fine-grained captioning by aligning their hidden states
+                        with a frozen image embedding, without needing fine-grained caption data. Its full fine-tuning
+                        variant achieves the highest precision and nearly matches the F1 of a multi-stage pipeline
+                        while running about 20× faster.</p>
+                    </details>
                   </div>
                 </div>
 
@@ -180,10 +200,13 @@
                     <div class="paper-authors"><strong>Suryaansh Jain</strong>, Shreyas Chaudhari, Nikos Vlassis, <a
                         href="https://people.cs.umass.edu/~pthomas/">Philip S. Thomas</a></div>
                     <!-- <div class="paper-venue">Under submission to AAAI 2027</div> -->
-                    <p class="paper-abstract">Introduces reward-based &phi;-function state abstractions for the STAR
-                      estimator, enabling low-variance, low-bias off-policy evaluation that outperforms
-                      importance-sampling and model-based baselines across RL environments. Manuscript under submission;
-                      available upon request.</p>
+                    <details class="paper-details">
+                      <summary>Abstract</summary>
+                      <p class="paper-abstract">Introduces reward-based &phi;-function state abstractions for the STAR
+                        estimator, enabling low-variance, low-bias off-policy evaluation that outperforms
+                        importance-sampling and model-based baselines across RL environments. Manuscript under
+                        submission; available upon request.</p>
+                    </details>
                   </div>
                 </div>
 
@@ -202,13 +225,14 @@
                       <a href="https://github.com/ai-cet/paper-arxiv-llm-judge-calibration"
                         class="paper-button">code</a>
                     </div>
-                    <p class="paper-abstract">We introduce an optimal minority-veto strategy that is resilient to
-                      missing data and mitigates this
-                      bias to a large extent. For scenarios requiring even higher precision, we propose a novel
-                      regression-based framework that directly models the validator bias using a small set of
-                      human-annotated ground truth data. On a challenging code feedback task over 366 high-school
-                      Python programs, our regression approach reduces the maximum absolute error to just 1.2%,
-                      achieving a 2x improvement over the best-performing ensemble of 14 state-of-the-art LLMs.</p>
+                    <details class="paper-details">
+                      <summary>Abstract</summary>
+                      <p class="paper-abstract">Shows that LLM judges are strongly biased toward accepting outputs,
+                        with a 96% true positive rate but under 25% true negative rate. Introduces a minority-veto
+                        ensemble that mitigates this bias, and a regression-based calibration that reduces the maximum
+                        absolute error to 1.2% on 366 high-school Python programs, a 2× improvement over the best
+                        ensemble of 14 LLMs.</p>
+                    </details>
                   </div>
                 </div>
 
@@ -225,8 +249,11 @@
                     <div class="paper-buttons">
                       <a href="https://arxiv.org/abs/2412.02511" class="paper-button">arXiv</a>
                     </div>
-                    <p class="paper-abstract">Provide a bound on the cop number of graphs in terms of their 2-component
-                      order connectivity.</p>
+                    <details class="paper-details">
+                      <summary>Abstract</summary>
+                      <p class="paper-abstract">Provides a bound on the cop number of graphs in terms of their
+                        2-component order connectivity.</p>
+                    </details>
                   </div>
                 </div>
 
@@ -245,11 +272,12 @@
                     <div class="paper-buttons">
                       <a href="https://arxiv.org/abs/2407.10699" class="paper-button">arXiv</a>
                     </div>
-                    <p class="paper-abstract">Paper shows that fixed-parameter tractability cannot be extended to
-                      capture all FO-definable problems. It answers this question by showing that FO
-                      model checking on induced subgraphs of hypercubes is as difficult as FO model checking on general
-                      graphs.
-                    </p>
+                    <details class="paper-details">
+                      <summary>Abstract</summary>
+                      <p class="paper-abstract">Shows that FO model checking on induced subgraphs of hypercubes is as
+                        hard as on general graphs, so fixed-parameter tractability cannot be extended to all
+                        FO-definable problems on this class.</p>
+                    </details>
                   </div>
                 </div>
 
@@ -279,8 +307,8 @@
                     style="object-fit: contain;" />
                   <div class="list-body">
                     <h3>Machine Learning Intern</h3>
-                    <p class="list-meta">Applied Materials · SPG Team · Summer 2026 (12 weeks, ongoing) · Santa Clara,
-                      CA</p>
+                    <p class="list-meta">Applied Materials · SPG Team · Summer 2026 – present (internship, fall
+                      co-op) · Santa Clara, CA</p>
                     <ul>
                       <li>Building time-series forecasting models for inventory prediction using Temporal Fusion
                         Transformers and N-HiTS.</li>
@@ -297,7 +325,8 @@
                       <li>Designed an object-aware perception loss extending PAPO via YOLOv13 per-object KL terms.</li>
                       <li>Designed SimLoss, an information-theory-inspired loss enabling self-supervised fine-tuning of
                         VLMs.</li>
-                      <li>Matched the performance of multi-pass methods with a 10× improvement in cost and latency.</li>
+                      <li>Nearly matched the F1 of multi-stage methods, with the highest precision, while running about
+                        20× faster.</li>
                     </ul>
                   </div>
                 </article>
@@ -332,7 +361,7 @@
                   <img src="images/NUS_logo.jpg" alt="NUS" class="list-media"
                     style="object-fit: contain;" />
                   <div class="list-body">
-                    <h3>Visiting Researcher — LLM-Judge Bias</h3>
+                    <h3>Student Researcher</h3>
                     <p class="list-meta">National University of Singapore · May 2024 – Oct 2025 · Singapore</p>
                     <ul>
                       <li>Quantified agreeableness bias across 14 SOTA LLMs (~96% TPR / &lt;25% TNR on 366 Python
